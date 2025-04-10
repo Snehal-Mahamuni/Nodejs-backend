@@ -4,10 +4,14 @@ const bodyparser=require('body-parser')
 const mongoose=require('mongoose')
 
 const User=require('./models/User')
+const ProductRoutes=require('./routes/ProductRoutes')
 
-const server=express();
-server.use(cors());
-server.use(bodyparser.json());
+
+
+const server=express()
+server.use(cors())
+server.use(bodyparser.json())
+server.use('/Product',ProductRoutes)
 
 
 mongoose.connect('mongodb+srv://snehal:snehal%40123@snehal.eodlqm7.mongodb.net/').
